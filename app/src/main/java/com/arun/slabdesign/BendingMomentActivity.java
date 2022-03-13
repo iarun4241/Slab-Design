@@ -7,6 +7,8 @@ import androidx.appcompat.app.AppCompatDelegate;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import java.util.HashMap;
@@ -21,6 +23,8 @@ public class BendingMomentActivity extends AppCompatActivity {
 
     TextView textViewResult;
     String Result = "";
+
+    Button buttonNextThree;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +42,8 @@ public class BendingMomentActivity extends AppCompatActivity {
 
         textViewResult = findViewById(R.id.result);
 
+        buttonNextThree = findViewById(R.id.buttonNextThree);
+
         if (Tag == 1) {
             tagOne();
         }
@@ -46,6 +52,7 @@ public class BendingMomentActivity extends AppCompatActivity {
             tagTwoThreeFourFive();
         }
 
+        Log.d("Result: ", Result);
 
     }
 
@@ -160,7 +167,6 @@ public class BendingMomentActivity extends AppCompatActivity {
             calculate(matrix);
         }
 
-        textViewResult.setText(Result);
     }
 
     private void calculate(Double[][] matrix) {
@@ -301,38 +307,38 @@ public class BendingMomentActivity extends AppCompatActivity {
             ratio2 = ratio1 + 0.1;
             Log.d("Ratio2", ratio2.toString());
 
-            Result += "Ratio1 " + ratio1.toString() + "\n";
-            Result += "Ratio2" + ratio2.toString() + "\n";
+            Result += "Ratio1:\n" + ratio1.toString() + "\n";
+            Result += "Ratio2:\n" + ratio2.toString() + "\n";
 
             ALPAx1 = matrix[0][(int) (ratio1 * 10) % 10];
             Log.d("ALPHAx1", String.valueOf(ALPAx1));
 
-            Result += "ALPHAx1 " + ALPAx1.toString() + "\n";
+            Result += "ALPHAx1:\n" + ALPAx1.toString() + "\n";
 
             ALPAx2 = matrix[0][(int) (ratio2 * 10) % 10];
             Log.d("ALPHAx2", String.valueOf(ALPAx2));
 
-            Result += "ALPHAx2" + ALPAx2.toString() + "\n";
+            Result += "ALPHAx2:\n" + ALPAx2.toString() + "\n";
 
             ALPAx = ALPAx1 + (((ALPAx2 - ALPAx1) / (ratio2 - ratio1)) * (ratio - ratio1));
             Log.d("Moment Coeff. ALPAx", ALPAx.toString());
 
-            Result += "Moment Coeff. ALPAx" + ALPAx.toString() + "\n";
+            Result += "Moment Coeff. ALPAx:\n" + ALPAx.toString() + "\n";
 
             ALPAy1 = matrix[1][(int) (ratio1 * 10) % 10];
             Log.d("ALPHAy1", ALPAy1.toString());
 
-            Result += "ALPHAy1" + ALPAy1.toString() + "\n";
+            Result += "ALPHAy1:\n" + ALPAy1.toString() + "\n";
 
             ALPAy2 = matrix[1][(int) (ratio2 * 10) % 10];
             Log.d("ALPHAy2", ALPAy2.toString());
 
-            Result += "ALPHAy2" + ALPAy2.toString() + "\n";
+            Result += "ALPHAy2:\n" + ALPAy2.toString() + "\n";
 
             ALPAy = ALPAy1 - (((ALPAy1 - ALPAy2) / (ratio2 - ratio1)) * (ratio - ratio1));
             Log.d("ALPHAy", ALPAy.toString());
 
-            Result += "ALPHAy" + ALPAy.toString() + "\n";
+            Result += "ALPHAy:\n" + ALPAy.toString() + "\n";
 
             Mx = ALPAx * Wu * lx * lx;
             My = ALPAy * Wu * lx * lx;
@@ -340,8 +346,8 @@ public class BendingMomentActivity extends AppCompatActivity {
             Log.d("Bending moment along Short Span", Mx.toString());
             Log.d("Bending moment along Long Span", My.toString());
 
-            Result += "Bending moment along Short Span" + Mx.toString() + "\n";
-            Result += "Bending moment along Long Span" + My.toString() + "\n";
+            Result += "Bending moment along Short Span:\n" + Mx.toString() + "\n";
+            Result += "Bending moment along Long Span:\n" + My.toString() + "\n";
 
         } else {
             ratio1 = (ratio - ((float) (r % 10) / 100));
@@ -349,12 +355,12 @@ public class BendingMomentActivity extends AppCompatActivity {
             ALPAx = matrix[0][(int) (ratio1 * 10) % 10];
             Log.d("Moment Coeff. ALPAx", ALPAx.toString());
 
-            Result += "Moment Coeff. ALPAx" + ALPAx.toString() + "\n";
+            Result += "Moment Coeff. ALPAx:\n" + ALPAx.toString() + "\n";
 
             ALPAy = matrix[1][(int) (ratio1 * 10) % 10];
             Log.d("ALPHAy", ALPAy.toString());
 
-            Result += "ALPHAy" + ALPAy.toString() + "\n";
+            Result += "ALPHAy:\n" + ALPAy.toString() + "\n";
 
             Mx = ALPAx * Wu * lx * lx;
             My = ALPAy * Wu * lx * lx;
@@ -362,8 +368,16 @@ public class BendingMomentActivity extends AppCompatActivity {
             Log.d("Bending moment along Short Span", Mx.toString());
             Log.d("Bending moment along Long Span", My.toString());
 
-            Result += "Bending moment along Short Span" + Mx.toString() + "\n";
-            Result += "Bending moment along Long Span" + My.toString() + "\n";
+            Result += "Bending moment along Short Span:\n" + Mx.toString() + "\n";
+            Result += "Bending moment along Long Span:\n" + My.toString() + "\n";
         }
+        textViewResult.setText(Result);
+
+        buttonNextThree.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(BendingMomentActivity.this, MainActivity.class));
+            }
+        });
     }
 }

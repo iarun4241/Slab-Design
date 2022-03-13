@@ -11,4 +11,9 @@
         <item name="colorAccent">@color/primary_white</item>
         <item name="android:statusBarColor" tools:targetApi="l">@color/primary_blue</item>
     </style>
+    <style name="MySeekBar" parent="Widget.AppCompat.SeekBar">
+        <item name="android:progressBackgroundTint">#999</item>
+        <item name="android:progressTint">@color/alert_green</item>
+        <item name="android:thumbTint">@color/primary_blue</item>
+    </style>
 </resources>

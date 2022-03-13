@@ -41,23 +41,95 @@ public class ValuesActivity extends AppCompatActivity {
         Button buttonNextTwo = findViewById(R.id.buttonNextTwo);
         mappedValues = new HashMap<String, Double>();
 
+        editTextLy = findViewById(R.id.editTextLy);
+        editTextLx = findViewById(R.id.editTextLx);
+        editTextWallWidth = findViewById(R.id.editTextWallWidth);
+        editTextLiveLoad = findViewById(R.id.editTextLiveLoad);
+        editTextFloorThickness = findViewById(R.id.editTextFloorFinishThickness);
+        editTextFck = findViewById(R.id.editTextFck);
+
         Intent intent = getIntent();
         String Tag = intent.getExtras().getString("Tag");
 
         mappedValues.put("Tag", Double.parseDouble(Tag));
 
-        Toast.makeText(this, "Tag: " + Tag, Toast.LENGTH_SHORT).show();
+        editTextLx.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View view, boolean b) {
+                if(b){
+                    editTextLx.setBackgroundResource(R.drawable.edittext_focused);
+                }
+                else{
+                    editTextLx.setBackgroundResource(R.drawable.edittext);
+                }
+            }
+        });
+
+        editTextLy.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View view, boolean b) {
+                if(b){
+                    editTextLy.setBackgroundResource(R.drawable.edittext_focused);
+                }
+                else{
+                    editTextLy.setBackgroundResource(R.drawable.edittext);
+                }
+            }
+        });
+
+        editTextWallWidth.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View view, boolean b) {
+                if(b){
+                    editTextWallWidth.setBackgroundResource(R.drawable.edittext_focused);
+                }
+                else{
+                    editTextWallWidth.setBackgroundResource(R.drawable.edittext);
+                }
+            }
+        });
+
+        editTextLiveLoad.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View view, boolean b) {
+                if(b){
+                    editTextLiveLoad.setBackgroundResource(R.drawable.edittext_focused);
+                }
+                else{
+                    editTextLiveLoad.setBackgroundResource(R.drawable.edittext);
+                }
+            }
+        });
+
+        editTextFloorThickness.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View view, boolean b) {
+                if(b){
+                    editTextFloorThickness.setBackgroundResource(R.drawable.edittext_focused);
+                }
+                else{
+                    editTextFloorThickness.setBackgroundResource(R.drawable.edittext);
+                }
+            }
+        });
+
+        editTextFck.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View view, boolean b) {
+                if(b){
+                    editTextFck.setBackgroundResource(R.drawable.edittext_focused);
+                }
+                else{
+                    editTextFck.setBackgroundResource(R.drawable.edittext);
+                }
+            }
+        });
 
         buttonNextTwo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                editTextLy = findViewById(R.id.editTextLy);
-                editTextLx = findViewById(R.id.editTextLx);
-                editTextWallWidth = findViewById(R.id.editTextWallWidth);
-                editTextLiveLoad = findViewById(R.id.editTextLiveLoad);
-                editTextFloorThickness = findViewById(R.id.editTextFloorFinishThickness);
-                editTextFck = findViewById(R.id.editTextFck);
+
 
                 Ly = editTextLy.getText().toString();
                 Lx = editTextLx.getText().toString();
@@ -67,27 +139,33 @@ public class ValuesActivity extends AppCompatActivity {
                 Fck = editTextFck.getText().toString();
 
                 if (Ly.isEmpty()) {
+                    editTextLy.setBackgroundResource(R.drawable.edittext_error);
                     editTextLy.setError("Ly value missing!");
                     flag = 1;
                 }
 
                 if (Lx.isEmpty()) {
+                    editTextLx.setBackgroundResource(R.drawable.edittext_error);
                     editTextLx.setError("Lx value missing!");
                     flag = 1;
                 }
                 if (WallWidth.isEmpty()) {
+                    editTextWallWidth.setBackgroundResource(R.drawable.edittext_error);
                     editTextWallWidth.setError("Width of the wall value missing!");
                     flag = 1;
                 }
                 if (LiveLoad.isEmpty()) {
+                    editTextLiveLoad.setBackgroundResource(R.drawable.edittext_error);
                     editTextLiveLoad.setError("Live load value value missing!");
                     flag = 1;
                 }
                 if (FloorThickness.isEmpty()) {
+                    editTextFloorThickness.setBackgroundResource(R.drawable.edittext_error);
                     editTextFloorThickness.setError("Floor Thickness value missing!");
                     flag = 1;
                 }
                 if (Fck.isEmpty()) {
+                    editTextFck.setBackgroundResource(R.drawable.edittext_error);
                     editTextFck.setError("Fck value missing!");
                     flag = 1;
                 }

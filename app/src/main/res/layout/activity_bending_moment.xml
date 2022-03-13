@@ -4,7 +4,27 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:paddingLeft="24dp"
+    android:paddingRight="24dp"
+    android:paddingTop="24dp"
+    android:paddingBottom="36dp"
     tools:context=".BendingMomentActivity">
+
+    <androidx.appcompat.widget.AppCompatSeekBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.025"
+        android:id="@+id/seekBar"
+        android:max="2"
+        android:clickable="false"
+        style="@style/MySeekBar"
+        android:progress="2"
+        />
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -49,23 +69,45 @@
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.35"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.25"
+        app:layout_constraintVertical_bias="0.55"
+        android:background="@drawable/button"
         >
         <androidx.appcompat.widget.AppCompatTextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="14sp"
-            android:textColor="@color/primary_black"
+            android:textColor="@color/primary_white"
             android:id="@+id/result"
             android:fontFamily="@font/roboto"
             android:scrollHorizontally="false"
+            android:lineSpacingExtra="5sp"
+            android:letterSpacing="0.05"
+            android:padding="20dp"
+            app:fontFamily="@font/roboto_bold"
             android:ellipsize="none"
             android:layout_marginLeft="10dp"
             android:maxLines="100"
             />
     </LinearLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button"
+        android:id="@+id/buttonNextThree"
+        android:text="Redesign"
+        android:paddingHorizontal="30dp"
+        android:fontFamily="@font/roboto_bold"
+        android:textColor="@color/primary_white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.98"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
