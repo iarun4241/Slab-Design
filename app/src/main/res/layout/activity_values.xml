@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="24dp"
+    android:paddingRight="24dp"
+    android:paddingTop="24dp"
+    android:paddingBottom="36dp"
+    android:overScrollMode="ifContentScrolls"
+    tools:context=".ValuesActivity">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.1"
+        android:orientation="horizontal">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/circle"
+            android:gravity="center"
+            android:text="2"
+            android:id="@+id/numberTwo"
+            android:textColor="@color/primary_black"
+            android:textSize="16sp"
+            android:fontFamily="@font/roboto_bold"
+            ></androidx.appcompat.widget.AppCompatTextView>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:textColor="@color/primary_black"
+            android:fontFamily="@font/roboto_bold"
+            android:textSize="20sp"
+            android:text="Enter the following values"
+            android:layout_height="wrap_content"
+            android:id="@+id/questionOne"
+            android:scrollHorizontally="false"
+            android:ellipsize="none"
+            android:layout_marginLeft="10dp"
+            android:maxLines="100" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.45"
+        >
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/editTextLy"
+            android:hint="Enter Ly (in m)"
+            android:inputType="numberDecimal"
+            android:backgroundTint="@color/primary_blue"
+            android:layout_marginTop="20dp"
+            android:textSize="16sp"
+            android:focusedByDefault="true"/>
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/editTextLx"
+            android:layout_marginTop="20dp"
+            android:inputType="numberDecimal"
+            android:textSize="16sp"
+            android:hint="Enter Lx (in m)"
+            android:backgroundTint="@color/primary_blue"/>
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:textSize="16sp"
+            android:inputType="numberDecimal"
+            android:id="@+id/editTextWallWidth"
+            android:hint="Enter width of the wall (in mm)"
+            android:backgroundTint="@color/primary_blue"/>
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:textSize="16sp"
+            android:inputType="numberDecimal"
+            android:id="@+id/editTextLiveLoad"
+            android:hint="Enter live load (in KN/sq.m)"
+            android:backgroundTint="@color/primary_blue"/>
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:textSize="16sp"
+            android:inputType="numberDecimal"
+            android:id="@+id/editTextFloorFinishThickness"
+            android:hint="Enter thickness of the floor finish (in mm)"
+            android:backgroundTint="@color/primary_blue" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
+            android:layout_marginTop="20dp"
+            android:textSize="16sp"
+            android:id="@+id/editTextFck"
+            android:hint="Enter fck (in N/sq.mm)"
+            android:backgroundTint="@color/primary_blue" />
+
+
+
+    </LinearLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button"
+        android:id="@+id/buttonNextTwo"
+        android:text="Next"
+        android:paddingHorizontal="30dp"
+        android:fontFamily="@font/roboto_bold"
+        android:textColor="@color/primary_white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.98"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

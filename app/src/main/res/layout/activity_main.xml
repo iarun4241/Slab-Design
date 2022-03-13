@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="24dp"
+    android:paddingRight="24dp"
+    android:paddingTop="24dp"
+    android:paddingBottom="36dp"
+    android:overScrollMode="ifContentScrolls"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.1"
+        android:orientation="horizontal">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/circle"
+            android:gravity="center"
+            android:text="1"
+            android:id="@+id/numberOne"
+            android:textColor="@color/primary_black"
+            android:textSize="16sp"
+            android:fontFamily="@font/roboto_bold"
+            ></androidx.appcompat.widget.AppCompatTextView>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:textColor="@color/primary_black"
+            android:fontFamily="@font/roboto_bold"
+            android:textSize="20sp"
+            android:text="Select the type of slab to be designed"
+            android:layout_height="wrap_content"
+            android:id="@+id/questionOne"
+            android:scrollHorizontally="false"
+            android:ellipsize="none"
+            android:layout_marginLeft="10dp"
+            android:maxLines="100" />
+    </LinearLayout>
+
+
+    <RadioGroup
+        android:id="@+id/radioGroupSlabType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.65">
+
+        <RadioButton
+            android:id="@+id/radioSimplySupportedSlab"
+            android:layout_width="wrap_content"
+            android:textColor="@color/primary_black"
+            android:textSize="16sp"
+            android:fontFamily="@font/roboto"
+            android:layout_height="wrap_content"
+            android:text="Simply Supported Slab"
+            android:tag="1"
+            android:buttonTint="@color/primary_blue"
+            android:checked="true" />
+
+        <RadioButton
+            android:id="@+id/radioInteriorPanels"
+            android:layout_width="wrap_content"
+            android:textColor="@color/primary_black"
+            android:textSize="16sp"
+            android:tag="2"
+            android:fontFamily="@font/roboto"
+            android:layout_height="wrap_content"
+            android:buttonTint="@color/primary_blue"
+            android:text="Interior Panels"
+            android:checked="false" />
+
+        <RadioButton
+            android:id="@+id/radioOneShortEdgeContinuous"
+            android:layout_width="wrap_content"
+            android:textColor="@color/primary_black"
+            android:textSize="16sp"
+            android:tag="3"
+            android:fontFamily="@font/roboto"
+            android:layout_height="wrap_content"
+            android:buttonTint="@color/primary_blue"
+            android:text="One Short Edge Continous"
+            android:checked="false" />
+
+        <RadioButton
+            android:id="@+id/radioOneLongEdgeContinuous"
+            android:layout_width="wrap_content"
+            android:textColor="@color/primary_black"
+            android:textSize="16sp"
+            android:tag="4"
+            android:buttonTint="@color/primary_blue"
+            android:fontFamily="@font/roboto"
+            android:layout_height="wrap_content"
+            android:text="One Long Edge Discountinous"
+            android:checked="false" />
+
+        <RadioButton
+            android:id="@+id/radioTwoAdjacentEdgeDiscontinuous"
+            android:layout_width="wrap_content"
+            android:textColor="@color/primary_black"
+            android:textSize="16sp"
+            android:tag="5"
+            android:fontFamily="@font/roboto"
+            android:buttonTint="@color/primary_blue"
+            android:layout_height="wrap_content"
+            android:text="Two Adjacent Edge Discontinuous"
+            android:checked="false" />
+
+        <RadioButton
+            android:id="@+id/radioTwoShortEdgeDiscontinuous"
+            android:layout_width="wrap_content"
+            android:tag="6"
+            android:textColor="@color/primary_black"
+            android:textSize="16sp"
+            android:fontFamily="@font/roboto"
+            android:layout_height="wrap_content"
+            android:buttonTint="@color/primary_blue"
+            android:text="Two Short Edges Discontinuous"
+            android:checked="false" />
+
+        <RadioButton
+            android:id="@+id/radioTwoLongEdgeDiscontinuous"
+            android:layout_width="wrap_content"
+            android:buttonTint="@color/primary_blue"
+            android:textColor="@color/primary_black"
+            android:textSize="16sp"
+            android:tag="7"
+            android:fontFamily="@font/roboto"
+            android:layout_height="wrap_content"
+            android:text="Two Long Edges Discontinuous"
+            android:checked="false" />
+
+        <RadioButton
+            android:id="@+id/radioThreeEdgesDiscontinuous"
+            android:layout_width="wrap_content"
+            android:buttonTint="@color/primary_blue"
+            android:textColor="@color/primary_black"
+            android:textSize="16sp"
+            android:tag="8"
+            android:fontFamily="@font/roboto"
+            android:layout_height="wrap_content"
+            android:text="Three Edges Discontinuous"
+            android:checked="false" />
+
+        <RadioButton
+            android:id="@+id/radioThreeEdgesDiscontinuous1"
+            android:layout_width="wrap_content"
+            android:textColor="@color/primary_black"
+            android:textSize="16sp"
+            android:tag="9"
+            android:fontFamily="@font/roboto"
+            android:buttonTint="@color/primary_blue"
+            android:layout_height="wrap_content"
+            android:text="Three Edges Discontinuous"
+            android:checked="false" />
+
+        <RadioButton
+            android:id="@+id/radioFourEdgesDiscontinuous"
+            android:layout_width="wrap_content"
+            android:textColor="@color/primary_black"
+            android:textSize="16sp"
+            android:tag="10"
+            android:fontFamily="@font/roboto"
+            android:buttonTint="@color/primary_blue"
+            android:layout_height="wrap_content"
+            android:text="Four Edges Discountinous"
+            android:checked="false" />
+
+
+    </RadioGroup>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button"
+        android:id="@+id/buttonNextOne"
+        android:text="Next"
+        android:paddingHorizontal="30dp"
+        android:fontFamily="@font/roboto_bold"
+        android:textColor="@color/primary_white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.98"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
